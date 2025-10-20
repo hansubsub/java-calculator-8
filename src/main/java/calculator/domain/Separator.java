@@ -43,11 +43,11 @@ public class Separator {
         if (custom.length() > 5) {
             throw new IllegalArgumentException(CUSTOM_LENGTH_MESSAGE);
         }
+        if (custom.length() > 1) {
+            throw new IllegalArgumentException(CUSTOM_COUNT_MESSAGE);
+        }
         if (custom.matches("\\d+")) {
             throw new IllegalArgumentException(NOT_NUMBER_MESSAGE);
-        }
-        if (custom.length() > 1 && !custom.matches("[^a-zA-Z0-9]+")) {
-            throw new IllegalArgumentException(CUSTOM_COUNT_MESSAGE);
         }
         if (custom.contains(",") || custom.contains(":")) {
             throw new IllegalArgumentException(INVALID_CUSTOM_MESSAGE);
